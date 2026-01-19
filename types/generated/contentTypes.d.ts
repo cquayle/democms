@@ -480,7 +480,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   attributes: {
     articleId: Schema.Attribute.UID & Schema.Attribute.Required;
     authors: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
-    bodyBlocks: Schema.Attribute.Blocks;
+    body: Schema.Attribute.RichText;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'

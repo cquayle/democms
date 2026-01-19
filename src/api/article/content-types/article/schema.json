@@ -70,8 +70,8 @@
       "target": "api::place.place",
       "mappedBy": "articles"
     },
-    "bodyBlocks": {
-      "type": "blocks"
+    "body": {
+      "type": "richtext"
     }
   }
 }
