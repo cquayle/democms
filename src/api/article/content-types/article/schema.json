@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Articles"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "articleId": {
+      "type": "uid",
+      "required": true
+    },
+    "translationId": {
+      "type": "uid"
+    },
+    "language": {
+      "type": "enumeration",
+      "required": true,
+      "default": "eng",
+      "enum": [
+        "eng"
+      ]
+    },
+    "datetime": {
+      "type": "datetime",
+      "required": true
+    },
+    "datetimePub": {
+      "type": "datetime",
+      "required": false
+    },
+    "uri": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "sourceUri": {
+      "type": "string"
+    },
+    "imageUri": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "articles"
+    },
+    "concepts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::concept.concept",
+      "mappedBy": "articles"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::author.author",
+      "mappedBy": "article"
+    },
+    "places": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::place.place",
+      "mappedBy": "articles"
+    },
+    "bodyBlocks": {
+      "type": "blocks"
+    }
+  }
+}
