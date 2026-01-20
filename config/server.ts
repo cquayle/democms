@@ -6,7 +6,7 @@ export default ({ env }) => ({
   },
   logger: {
     config: {
-      level: 'debug'
+      level: 'silly'
     }
   }
 });
