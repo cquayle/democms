@@ -34,6 +34,8 @@ yarn build
 
 ## ⚙️ Deployment
 
+Demo CMS is deployed to Strapi Cloud and can be accessed here: [https://deserving-frogs-345174c2a8.strapiapp.com/admin](https://deserving-frogs-345174c2a8.strapiapp.com/admin)
+
 Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
 
 ```
@@ -58,4 +60,4 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+🤫 Psst! [Strapi is hiring](https://strapi.io/careers).
