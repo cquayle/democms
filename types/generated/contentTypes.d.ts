@@ -479,19 +479,11 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     articleId: Schema.Attribute.UID & Schema.Attribute.Required;
-    authors: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
-    body: Schema.Attribute.RichText;
-    bodyBlocks: Schema.Attribute.Blocks;
-    categories: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::category.category'
-    >;
-    concepts: Schema.Attribute.Relation<'manyToMany', 'api::concept.concept'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    datetime: Schema.Attribute.DateTime & Schema.Attribute.Required;
     datetimePub: Schema.Attribute.DateTime;
+    fullArticle: Schema.Attribute.Blocks;
     imageUri: Schema.Attribute.String;
     language: Schema.Attribute.Enumeration<['eng']> &
       Schema.Attribute.Required &
@@ -502,11 +494,10 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::article.article'
     > &
       Schema.Attribute.Private;
-    places: Schema.Attribute.Relation<'manyToMany', 'api::place.place'>;
     publishedAt: Schema.Attribute.DateTime;
     sourceUri: Schema.Attribute.String;
+    summary: Schema.Attribute.String;
     title: Schema.Attribute.String;
-    translationId: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -525,7 +516,6 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    article: Schema.Attribute.Relation<'manyToOne', 'api::article.article'>;
     authorId: Schema.Attribute.UID & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -555,13 +545,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: false;
   };
-  pluginOptions: {
-    i18n: {
-      localized: false;
-    };
-  };
   attributes: {
-    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -590,7 +574,6 @@ export interface ApiConceptConcept extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -668,7 +651,6 @@ export interface ApiPlacePlace extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
     country: Schema.Attribute.Relation<'manyToOne', 'api::country.country'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

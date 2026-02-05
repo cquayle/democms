@@ -13,12 +13,6 @@
   "attributes": {
     "uri": {
       "type": "string"
-    },
-    "articles": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::article.article",
-      "inversedBy": "concepts"
     }
   }
 }

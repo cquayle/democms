@@ -5,7 +5,7 @@ export default () => ({
           shadowCRUD: true,
           landingPage: true,
           depthLimit: 3,
-          amountLimit: 100,
+          amountLimit: 500,
           apolloServer: {
             tracing: true,
             introspection: true
