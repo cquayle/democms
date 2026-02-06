@@ -42,7 +42,7 @@
     "summary": {
       "type": "string"
     },
-    "fullArticle": {
+    "fullStory": {
       "type": "blocks"
     }
   }
