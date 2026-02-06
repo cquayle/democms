@@ -15,13 +15,8 @@
       "type": "uid",
       "required": true
     },
-    "language": {
-      "type": "enumeration",
-      "required": true,
-      "default": "eng",
-      "enum": [
-        "eng"
-      ]
+    "lang": {
+      "type": "string"
     },
     "datetimePub": {
       "type": "datetime",

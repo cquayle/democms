@@ -485,9 +485,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     datetimePub: Schema.Attribute.DateTime;
     fullStory: Schema.Attribute.Text;
     imageUri: Schema.Attribute.String;
-    language: Schema.Attribute.Enumeration<['eng']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'eng'>;
+    lang: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
