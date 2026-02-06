@@ -483,7 +483,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     datetimePub: Schema.Attribute.DateTime;
-    fullStory: Schema.Attribute.Blocks;
+    fullStory: Schema.Attribute.Text;
     imageUri: Schema.Attribute.String;
     language: Schema.Attribute.Enumeration<['eng']> &
       Schema.Attribute.Required &

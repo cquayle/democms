@@ -43,7 +43,7 @@
       "type": "string"
     },
     "fullStory": {
-      "type": "blocks"
+      "type": "text"
     }
   }
 }
